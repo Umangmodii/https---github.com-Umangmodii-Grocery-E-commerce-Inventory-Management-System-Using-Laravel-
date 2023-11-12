@@ -30,6 +30,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
+            "Srmklive\\PayPal\\": "vendor/srmklive/paypal/src/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
             "Touhidurabir\\Filterable\\": "packages/laravel-filterable/src/"
