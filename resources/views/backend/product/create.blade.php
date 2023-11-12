@@ -103,6 +103,8 @@
               <option value="default">Default</option>
               <option value="new">New</option>
               <option value="hot">Hot</option>
+              <option value="bestseller">Bestseller</option>
+              <option value="sale">Sale</option>
           </select>
         </div>
 

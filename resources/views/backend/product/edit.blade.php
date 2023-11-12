@@ -110,6 +110,8 @@
               <option value="default" {{(($product->condition=='default')? 'selected':'')}}>Default</option>
               <option value="new" {{(($product->condition=='new')? 'selected':'')}}>New</option>
               <option value="hot" {{(($product->condition=='hot')? 'selected':'')}}>Hot</option>
+              <option value="bestseller" {{(($product->condition=='bestseller')? 'selected':'')}}>Bestseller</option>
+              <option value="sale" {{(($product->condition=='sale')? 'selected':'')}}>Sale</option>
           </select>
         </div>
 

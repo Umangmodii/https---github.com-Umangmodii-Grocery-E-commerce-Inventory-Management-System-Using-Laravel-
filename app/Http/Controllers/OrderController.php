@@ -279,19 +279,19 @@ class OrderController extends Controller
         return $pdf->download($file_name);
     }
 
-    public function pdf(Request $request){
-        $order = Order::getAllOrder($request->id);
+    // public function pdf(Request $request){
+    //     $order = Order::getAllOrder($request->id);
     
-        if (!$order) {
-            // Handle the case where the order is not found.
-            // You might want to return a response to the user or redirect with an error message.
-        }
+    //     if (!$order) {
+    //         // Handle the case where the order is not found.
+    //         // You might want to return a response to the user or redirect with an error message.
+    //     }
     
-        $file_name = $order->order_number.'-'.$order->first_name.'.pdf';
-        $pdf = PDF::loadView('backend.order.pdf', compact('order'));
+    //     $file_name = $order->order_number.'-'.$order->first_name.'.pdf';
+    //     $pdf = PDF::loadView('backend.order.pdf', compact('order'));
     
-        return $pdf->download($file_name);
-    }
+    //     return $pdf->download($file_name);
+    // }
     
     
     // Income chart

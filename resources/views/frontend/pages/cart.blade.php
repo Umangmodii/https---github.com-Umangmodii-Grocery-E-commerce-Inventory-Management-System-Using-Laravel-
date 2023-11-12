@@ -9,7 +9,7 @@
                 <div class="col-12">
                     <div class="bread-inner">
                         <ul class="bread-list">
-                            <li><a href="{{route('home')}}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="23" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                            <li><a href="{{route('home')}}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
                                 <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
                               </svg> Home </i></a></li> /
                             <li class=""><a href="">Product Grids</a></li> 
@@ -32,12 +32,12 @@
 					<table class="table shopping-summery">
 						<thead>
 							<tr class="main-hading">
-								<th>PRODUCT</th>
+								<th>PRODUCT </th>
 								<th>NAME</th>
-								<th class="text-center">UNIT PRICE</th>
+								<th class="text-center">PRICE</th>
 								<th class="text-center">QUANTITY</th>
 								<th class="text-center">TOTAL</th>
-								<th class="text-center"><i class="ti-trash remove-icon"></i></th>
+								<th class="text-center">Remove</th>
 							</tr>
 						</thead>
 						<tbody id="cart_item_list">
@@ -54,7 +54,7 @@
 												<p class="product-name"><a href="{{route('product-detail',$cart->product['slug'])}}" target="_blank">{{$cart->product['title']}}</a></p>
 												<p class="product-des">{!!($cart['summary']) !!}</p>
 											</td>
-											<td class="price" data-title="Price"><span>${{number_format($cart['price'],2)}}</span></td>
+											<td class="price" data-title="Price"><span><i class="fa fa-inr">{{number_format($cart['price'],2)}}</i></span></td>
 											<td class="qty" data-title="Qty"><!-- Input Order -->
 												<div class="input-group">
 													<div class="button minus">
@@ -72,7 +72,7 @@
 												</div>
 												<!--/ End Input Order -->
 											</td>
-											<td class="total-amount cart_single_price" data-title="Total"><span class="money">${{$cart['amount']}}</span></td>
+											<td class="total-amount cart_single_price" data-title="Total"><span class="money"><i class="fa fa-inr">{{$cart['amount']}}</i></span></td>
 
 											<td class="action" data-title="Remove"><a href="{{route('cart-delete',$cart->id)}}"><i class="ti-trash remove-icon"></i></a></td>
 										</tr>
@@ -127,10 +127,10 @@
 							<div class="col-lg-4 col-md-7 col-12">
 								<div class="right">
 									<ul>
-										<li class="order_subtotal" data-price="{{Helper::totalCartPrice()}}">Cart Subtotal<span>${{number_format(Helper::totalCartPrice(),2)}}</span></li>
+										<li class="order_subtotal" data-price="{{Helper::totalCartPrice()}}">Cart Subtotal<span><i class="fa fa-inr">{{number_format(Helper::totalCartPrice(),2)}}</i></span></li>
 
 										@if(session()->has('coupon'))
-										<li class="coupon_price" data-price="{{Session::get('coupon')['value']}}">You Save<span>${{number_format(Session::get('coupon')['value'],2)}}</span></li>
+										<li class="coupon_price" data-price="{{Session::get('coupon')['value']}}">You Save<span><i class="fa fa-inr">{{number_format(Session::get('coupon')['value'],2)}}</i></span></li>
 										@endif
 										@php
 											$total_amount=Helper::totalCartPrice();
@@ -139,9 +139,9 @@
 											}
 										@endphp
 										@if(session()->has('coupon'))
-											<li class="last" id="order_total_price">You Pay<span>${{number_format($total_amount,2)}}</span></li>
+											<li class="last" id="order_total_price">You Pay<span><i class="fa fa-inr">{{number_format($total_amount,2)}}</i></span></li>
 										@else
-											<li class="last" id="order_total_price">You Pay<span>${{number_format($total_amount,2)}}</span></li>
+											<li class="last" id="order_total_price">You Pay<span><i class="fa fa-inr">{{number_format($total_amount,2)}}</i></span></li>
 										@endif
 									</ul>
 									<div class="button5">
