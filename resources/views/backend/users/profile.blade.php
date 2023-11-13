@@ -14,7 +14,7 @@
      <h4 class=" font-weight-bold">Profile</h4>
      <ul class="breadcrumbs">
          <li><a href="{{route('admin')}}" style="color:#999">Dashboard</a></li>
-         <li><a href="" class="active text-primary">Profile Page</a></li>
+         <li><a href="" class="active text-primary">Profile </a></li>
      </ul>
    </div>
    <div class="card-body">
