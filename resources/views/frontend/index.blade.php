@@ -33,6 +33,38 @@
     </section>
 @endif
 
+  <!-- Single Widget -->
+  <div class="single-widget recent-post">
+    <h3 class="title">Recently Viewed</h3>
+    {{-- {{dd($recent_products)}} --}}
+    $recent_products = "";
+
+    @foreach($recent_products as $product)
+        <!-- Single Post -->
+        @php
+            $photo=explode(',',$product->photo);
+        @endphp
+        <div class="single-post first">
+            <div class="image">
+                <img src="{{$photo[0]}}" alt="{{$photo[0]}}">
+            </div>
+            <div class="content">
+                <h5><a href="{{route('product-detail',$product->slug)}}">{{$product->title}}</a></h5>
+                @php
+                    $org=($product->price-($product->price*$product->discount)/100);
+                @endphp
+                <p class="price"><del class="text-muted"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
+                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z"/>
+                  </svg>{{number_format($product->price,2)}}</del>   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
+                    <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z"/>
+                  </svg>{{number_format($org,2)}}  </p>
+
+            </div>
+        </div>
+        <!-- End Single Post -->
+    @endforeach
+</div>
+
 <!--/ End Slider Area -->
 
 <!-- Start Small Banner  -->
@@ -184,12 +216,14 @@
                                 $photo=explode(',',$data->photo);
                             @endphp
                             <img src="{{$photo[0]}}" alt="{{$photo[0]}}">
-                            <div class="content">
-                                <p>{{$data->cat_info['title']}}</p>
-                                <h3>{{$data->title}} <br>Up to<span> {{$data->discount}}%</span></h3>
-                                <a href="{{route('product-detail',$data->slug)}}">Shop Now</a>
-                            </div>
+                           
                         </div>
+                    </div>
+                    <div class="content col">
+                        <p><a href="{{$data->cat_info['title']}}"</a></p>
+                        <h3>{{$data->title}} <br>Up to<span> {{$data->discount}}%</span></h3>
+                        <br>
+                        <button class="btn btn-primary" "{{route('product-detail',$data->slug)}}" >Shop Now</button>
                     </div>
                     <!-- /End Single Banner  -->
                 @endforeach
@@ -269,13 +303,13 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="shop-section-title">
-                            <h1>Latest Items</h1>
+                            <h1>Products View</h1>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     @php
-                        $product_lists=DB::table('products')->where('status','active')->orderBy('id','DESC')->limit(6)->get();
+                        $product_lists=DB::table('products')->where('status','active')->orderBy('id','DESC')->limit(100)->get();
                     @endphp
                     @foreach($product_lists as $product)
                         <div class="col-md-4">
@@ -295,9 +329,7 @@
                                 <div class="col-lg-6 col-md-6 col-12 no-padding">
                                     <div class="content">
                                         <h4 class="title"><a href="#">{{$product->title}}</a></h4>
-                                        <p class="price with-discount"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
-                                            <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z"/>
-                                          </svg>{{number_format($product->discount,2)}}</p>
+                                       
                                     </div>
                                 </div>
                                 </div>

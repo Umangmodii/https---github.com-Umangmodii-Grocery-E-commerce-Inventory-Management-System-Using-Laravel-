@@ -11,4 +11,4 @@
         <button class="close" data-dismiss="alert" aria-label="Close">×</button>
         {{session('error')}}
     </div>
-@endif
+@endif 

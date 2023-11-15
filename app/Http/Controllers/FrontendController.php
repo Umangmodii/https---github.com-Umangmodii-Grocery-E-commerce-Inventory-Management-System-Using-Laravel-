@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Banner;
 use App\Models\Product;
 use App\Models\Category;
@@ -17,9 +18,12 @@ use DB;
 use Hash;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use api;
+
 class FrontendController extends Controller
 {
    
+    
     public function index(Request $request){
         return redirect()->route($request->user()->role);
     }
@@ -95,7 +99,7 @@ class FrontendController extends Controller
             $products=$products->where('status','active')->paginate($_GET['show']);
         }
         else{
-            $products=$products->where('status','active')->paginate(9);
+            $products=$products->where('status','active')->paginate(50);
         }
         // Sort by name , price, category
 
@@ -406,7 +410,7 @@ class FrontendController extends Controller
     }
 
     public function subscribe(Request $request){
-        if(! Newsletter::isSubscribed($request->email)){
+        if(!Newsletter::isSubscribed($request->email)){
                 Newsletter::subscribePending($request->email);
                 if(Newsletter::lastActionSucceeded()){
                     request()->session()->flash('success','Subscribed! Please check your email');

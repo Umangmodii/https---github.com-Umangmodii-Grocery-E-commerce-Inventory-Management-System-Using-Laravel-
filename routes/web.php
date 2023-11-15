@@ -101,7 +101,9 @@
     Route::get('blog-tag/{slug}', [FrontendController::class, 'blogByTag'])->name('blog.tag');
 
 // NewsLetter
-    Route::post('/subscribe', [FrontendController::class, 'subscribe'])->name('subscribe');
+    Route::get('/subscribe', [FrontendController::class, 'subscribe'])->name('subscribe');
+    // Route::any('/subscribe', 'FrontendController@subscribe');
+
 
 // Product Review
     Route::resource('/review', 'ProductReviewController');
