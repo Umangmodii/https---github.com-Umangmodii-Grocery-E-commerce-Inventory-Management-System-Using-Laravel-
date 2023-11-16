@@ -43,8 +43,12 @@
             @foreach($reviews as $review)
                 <tr>
                     <td>{{$review->id}}</td>
-                    <td>{{$review->user_info['name']}}</td>
-                    <td>{{$review->product->title}}</td>
+                    {{-- <td>{{$review->user_info['name']}}</td> --}}
+                    <td>{{$review->user_info['name'] ?? 'N/A'}}</td>
+
+                    {{-- <td>{{$review->product->title}}</td> --}}
+                    <td>{{$review->product->title ?? 'N/A'}}</td>
+
                     <td>{{$review->review}}</td>
                     <td>
                      <ul style="list-style:none">

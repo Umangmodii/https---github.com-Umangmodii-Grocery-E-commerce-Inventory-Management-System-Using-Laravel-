@@ -33,18 +33,22 @@
     </section>
 @endif
 
-  <!-- Single Widget -->
+  {{-- <!-- Single Widget -->
   <div class="single-widget recent-post">
     <h3 class="title">Recently Viewed</h3>
+
+   
+
     {{-- {{dd($recent_products)}} --}}
-    $recent_products = "";
+    @isset($recent_products)
 
     @foreach($recent_products as $product)
         <!-- Single Post -->
         @php
             $photo=explode(',',$product->photo);
         @endphp
-        <div class="single-post first">
+       
+
             <div class="image">
                 <img src="{{$photo[0]}}" alt="{{$photo[0]}}">
             </div>
@@ -63,7 +67,8 @@
         </div>
         <!-- End Single Post -->
     @endforeach
-</div>
+    @endisset
+</div> 
 
 <!--/ End Slider Area -->
 
@@ -72,7 +77,7 @@
     <div class="container-fluid">
         <div class="row">
             @php
-            $category_lists=DB::table('categories')->where('status','active')->limit(10)->get();
+            $category_lists=DB::table('categories')->where('status','active')->limit(50)->get();
             @endphp
             @if($category_lists)
                 @foreach($category_lists as $cat)
@@ -99,6 +104,59 @@
     </div>
 </section>
 <!-- End Small Banner -->
+
+<br>
+<br>
+
+
+<!-- Start Shop Home List  -->
+<section class="shop-home-list section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-12">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="shop-section-title">
+                            <h1>Products View</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    @php
+                        $product_lists=DB::table('products')->where('status','active')->orderBy('id','DESC')->limit(100)->get();
+                    @endphp
+                    @foreach($product_lists as $product)
+                        <div class="col-md-4">
+                            <!-- Start Single List  -->
+                            <div class="single-list">
+                                <div class="row">
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    <div class="list-image overlay">
+                                        @php
+                                            $photo=explode(',',$product->photo);
+                                            // dd($photo);
+                                        @endphp
+                                        <img src="{{$photo[0]}}" alt="{{$photo[0]}}">
+                                        <a href="{{route('add-to-cart',$product->slug)}}" class="buy"><i class="fa fa-shopping-bag"></i></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-12 no-padding">
+                                    <div class="content">
+                                        <h4 class="title"><a href="{{route('add-to-cart',$product->slug)}}">{{$product->title}}</a></h4>
+                                       
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <!-- End Single List  -->
+                        </div>
+                    @endforeach
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- Start Product Area -->
 <div class="product-area section">
@@ -220,10 +278,11 @@
                         </div>
                     </div>
                     <div class="content col">
-                        <p><a href="{{$data->cat_info['title']}}"</a></p>
+                        {{-- <p><a href="{{$data->cat_info['title']}}"</a></p> --}}
+                        {{-- <h2><a href="{{route('product-detail',$product->slug)}}">{{$product->title}}</a></h2> --}}
                         <h3>{{$data->title}} <br>Up to<span> {{$data->discount}}%</span></h3>
                         <br>
-                        <button class="btn btn-primary" "{{route('product-detail',$data->slug)}}" >Shop Now</button>
+                        <button class="btn btn-primary"> <a href="{{route('product-detail',$data->slug)}}"> Shop Now </a></button>
                     </div>
                     <!-- /End Single Banner  -->
                 @endforeach
@@ -295,7 +354,7 @@
 </div>
 <!-- End Most Popular Area -->
 
-<!-- Start Shop Home List  -->
+{{-- <!-- Start Shop Home List  -->
 <section class="shop-home-list section">
     <div class="container">
         <div class="row">
@@ -342,7 +401,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- End Shop Home List  -->
 
 <!-- Start Shop Blog  -->

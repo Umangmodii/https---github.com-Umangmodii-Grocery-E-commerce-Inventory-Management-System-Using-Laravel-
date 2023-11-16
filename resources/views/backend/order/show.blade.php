@@ -83,7 +83,9 @@
                     </tr>
                     <tr>
                         <td>Shipping Charge</td>
-                        <td> :  {{$order->shipping->price}}</td>
+                        {{-- <td> :  {{$order->shipping->price}}</td> --}}
+                        <td>{{ $order->shipping->price ?? 'N/A' }}</td>
+
                     </tr>
                     <tr>
                       <td>Coupon</td>

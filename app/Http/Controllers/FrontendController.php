@@ -204,7 +204,7 @@ class FrontendController extends Controller
             }
     }
     public function productSearch(Request $request){
-        $recent_products=Product::where('status','active')->orderBy('id','DESC')->limit(3)->get();
+        $recent_products=Product::where('status','active')->orderBy('id','DESC')->limit(10)->get();
         $products=Product::orwhere('title','like','%'.$request->search.'%')
                     ->orwhere('slug','like','%'.$request->search.'%')
                     ->orwhere('description','like','%'.$request->search.'%')
@@ -286,7 +286,7 @@ class FrontendController extends Controller
 
     public function blogDetail($slug){
         $post=Post::getPostBySlug($slug);
-        $rcnt_post=Post::where('status','active')->orderBy('id','DESC')->limit(3)->get();
+        $rcnt_post=Post::where('status','active')->orderBy('id','DESC')->limit(100)->get();
         // return $post;
         return view('frontend.pages.blog-detail')->with('post',$post)->with('recent_posts',$rcnt_post);
     }

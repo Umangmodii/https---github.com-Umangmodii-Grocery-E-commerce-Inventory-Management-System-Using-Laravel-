@@ -216,7 +216,9 @@
 														<div class="product-content">
 														
                                           
-											<p> Brand: {{ $product->brand->title }}</p>
+															@if(isset($product->brand))
+															<p>Brand: {{ $product->brand->title }}</p>
+														@endif
                                       
 															<div class="product-price">
 																

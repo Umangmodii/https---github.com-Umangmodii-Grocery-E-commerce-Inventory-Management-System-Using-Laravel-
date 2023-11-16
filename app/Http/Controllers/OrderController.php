@@ -258,26 +258,38 @@ class OrderController extends Controller
     
             }
             else{
-                request()->session()->flash('error','Your order canceled. please try again');
+                request()->session()->flash('error','Your order Cancel. please try again');
                 return redirect()->route('home');
     
             }
         }
         else{
-            request()->session()->flash('error','Invalid order numer please try again');
+            request()->session()->flash('error','Invalid order number please try again');
             return back();
         }
     }
 
-    // PDF generate
-    public function pdf(Request $request){
+    // // PDF generate
+    public function pdf(Request $request)
+    {
         $order=Order::getAllOrder($request->id);
-        // return $order;
+        //  return $order;
         $file_name=$order->order_number.'-'.$order->first_name.'.pdf';
-        // return $file_name;
-        $pdf=PDF::loadview('backend.order.pdf',compact('order'));
+        //   return $file_name;
+          $pdf=PDF::loadview('backend.order.pdf',('order'));
+        $data = ['order' => $order];
+         restore_error_handler();
         return $pdf->download($file_name);
     }
+
+    
+
+    // function ($errno, $errstr, $errfile, $errline) 
+    // {
+    //     // Handle errors as needed
+
+    //     $set_time_limit = 300;
+    // }
 
     // public function pdf(Request $request){
     //     $order = Order::getAllOrder($request->id);
