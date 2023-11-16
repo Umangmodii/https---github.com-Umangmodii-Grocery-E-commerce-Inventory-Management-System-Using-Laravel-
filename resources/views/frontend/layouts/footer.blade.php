@@ -9,7 +9,8 @@
 						<!-- Single Widget -->
 						<div class="single-footer about">
 							<div class="logo">
-								<a href="index.html"><img src="{{asset('backend/img/logo2.png')}}" alt="#"></a>
+								{{-- <a href="index.html"><img src="{{asset('')}}" alt="About Us"></a> --}}
+								<h4>About Us</h4>
 							</div>
 							@php
 								$settings=DB::table('settings')->get();
@@ -60,7 +61,7 @@
 								</ul>
 							</div>
 							<!-- End Single Widget -->
-							<div class="sharethis-inline-follow-buttons"></div>
+							{{-- <div class="sharethis-inline-follow-buttons"></div> --}}
 						</div>
 						<!-- End Single Widget -->
 					</div>

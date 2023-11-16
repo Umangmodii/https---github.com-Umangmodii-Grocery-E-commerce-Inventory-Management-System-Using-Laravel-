@@ -191,17 +191,17 @@
                                     <div class="nav-inner">	
                                         <ul class="nav main-menu menu navbar-nav">
                                             <li class="{{Request::path()=='home' ? 'active' : ''}}"><a href="{{route('home')}}">Home</a></li>
-                                            <li class="{{Request::path()=='about-us' ? 'active' : ''}}"><a href="{{route('about-us')}}">About Us</a></li>
+                                            <li class="{{Request::path()=='about-us' ? 'active' : ''}}"><a href="{{route('about-us')}}">E-Mart</a></li>
                                             <li class="@if(Request::path()=='product-grids'||Request::path()=='product-lists')  active  @endif"><a href="{{route('product-grids')}}">Products</a><span class="new">New</span></li>												
                                                 {{Helper::getHeaderCategory()}}
                                             {{-- <li class="{{Request::path()=='24/7 Customer Service' ? 'active' : ''}}"><a href="{{route('blog')}}">24*7 Customer Service</a></li>									 --}}
                                                
                                             <li class="{{Request::path()=='contact' ? 'active' : ''}}"><a href="{{route('contact')}}">Contact Us</a></li>
-                                                      
-                                            <li class="{{Request::path()=='Become Seller' ? 'active' : ''}}"><a href="{{route('contact')}}">E-Mart Download App</a></li>
-                                            <li class="{{Request::path()=='24/7 Customer Service' ? 'active' : ''}}"><a href="{{route('blog')}}">24*7 Customer Service</a></li>	
+{{--                                                       
+                                            <li class="{{Request::path()=='Become Seller' ? 'active' : ''}}"><a href="{{route('contact')}}">E-Mart Download App</a></li> --}}
+                                            {{-- <li class="{{Request::path()=='24/7 Customer Service' ? 'active' : ''}}"><a href="{{route('blog')}}">24*7 Customer Service</a></li>	
                                             <li class="{{Request::path()=='Become Seller' ? 'active' : ''}}"><a href="{{route('blog')}}">Become Seller</a></li>	
-                                      
+                                       --}}
 
                                       
                                         </ul>

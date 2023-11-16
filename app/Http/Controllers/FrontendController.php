@@ -204,7 +204,7 @@ class FrontendController extends Controller
             }
     }
     public function productSearch(Request $request){
-        $recent_products=Product::where('status','active')->orderBy('id','DESC')->limit(10)->get();
+        $recent_products=Product::where('status','active')->orderBy('id','DESC')->limit(5)->get();
         $products=Product::orwhere('title','like','%'.$request->search.'%')
                     ->orwhere('slug','like','%'.$request->search.'%')
                     ->orwhere('description','like','%'.$request->search.'%')
