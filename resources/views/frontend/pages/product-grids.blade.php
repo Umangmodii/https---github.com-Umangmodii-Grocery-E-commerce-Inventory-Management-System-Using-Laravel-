@@ -233,12 +233,22 @@
                                     <h4 class="text-warning" style="margin:100px auto;">There are no products.</h4>
                             @endif
 
+                           
+                            <br>
+                             <br>
+
 
 
                         </div>
-                        <div class="row">
+
+                        <br>
+                        <br>
+                        
+
+                        <div class="row center">
                             <div class="col-md-12 justify-content-center d-flex">
                                 {{$products->appends($_GET)->links()}}
+                                <br>
                             </div>
                           </div>
 
@@ -456,7 +466,7 @@
     <br>
     <br>
 
-    <script>
+    {{-- <script>
         $(document).ready(function(){
         /*----------------------------------------------------*/
         /*  Jquery Ui slider js
@@ -488,5 +498,5 @@
                 "  -  "+m_currency + $("#slider-range").slider("values", 1));
             }
         })
-    </script>
+    </script> --}}
 @endpush

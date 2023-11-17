@@ -99,7 +99,7 @@ class FrontendController extends Controller
             $products=$products->where('status','active')->paginate($_GET['show']);
         }
         else{
-            $products=$products->where('status','active')->paginate(50);
+            $products=$products->where('status','active')->paginate(3);
         }
         // Sort by name , price, category
 
