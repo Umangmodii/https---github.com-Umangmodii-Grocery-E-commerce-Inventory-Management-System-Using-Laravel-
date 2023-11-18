@@ -160,7 +160,7 @@
           <th scope="col" class="text-right">Total:</th>
           <th>
             <span>
-                ${{number_format($order->total_amount,2)}}
+                {{number_format($order->total_amount,2)}}
             </span>
           </th>
         </tr>
