@@ -50,6 +50,3 @@ Many more....
 - Review Management
 - Comment Management
 - Profile Settings
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/e34af9db-e300-4e4a-b0bf-26286ab597e8/deploy-status)](https://app.netlify.com/sites/boisterous-meringue-66798c/deploys)
-
