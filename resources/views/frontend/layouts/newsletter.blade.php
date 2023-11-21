@@ -21,4 +21,7 @@
         </div>
     </div>
 </section>
+
+
+
 <!-- End Shop Newsletter -->

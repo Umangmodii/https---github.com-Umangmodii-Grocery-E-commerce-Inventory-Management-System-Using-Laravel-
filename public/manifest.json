@@ -1,28 +1,28 @@
 {
-  "name": "E-Mart Shop",
-  "short_name": "E-Mart Shop",
+  "name": "E-Mart Online Store",
+  "short_name": "E-Mart Online Store",
   "icons": [{
-    "src": "images/hello-icon-1024.png",
+    "src": "images/E-Mart.png",
       "sizes": "128x128",
       "type": "image/png"
     }, {
-      "src": "images/hello-icon-1024.png",
+      "src": "images/E-Mart.png",
       "sizes": "144x144",
       "type": "image/png"
     }, {
-      "src": "images/hello-icon-1024.png",
+      "src": "images/E-Mart.png",
       "sizes": "152x152",
       "type": "image/png"
     }, {
-      "src": "",
+      "src": "images/E-Mart.png",
       "sizes": "192x192",
       "type": "image/png"
     }, {
-      "src": "images/hello-icon-1024.png",
+      "src": "images/E-Mart.png",
       "sizes": "256x256",
       "type": "image/png"
     }, {
-      "src": "images/hello-icon-1024.png",
+      "src": "images/E-Mart.png",
       "sizes": "512x512",
       "type": "image/png"
     }],

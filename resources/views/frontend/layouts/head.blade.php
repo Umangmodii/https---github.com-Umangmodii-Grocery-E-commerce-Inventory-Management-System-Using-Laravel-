@@ -3,7 +3,7 @@
 <!-- Title Tag  -->
 <title>@yield('title')</title>
 <!-- Favicon -->
-<link rel="icon"  href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Emart_Logo.svg/2560px-Emart_Logo.svg.png">
+<link rel="icon"  href="https://www.canva.com/design/DAF0uh86d24/O7_QONW2cBAn9jOX5KG9KQ/view?utm_content=DAF0uh86d24&utm_campaign=designshare&utm_medium=link&utm_source=editor">
 <!-- Web Font -->
 <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 

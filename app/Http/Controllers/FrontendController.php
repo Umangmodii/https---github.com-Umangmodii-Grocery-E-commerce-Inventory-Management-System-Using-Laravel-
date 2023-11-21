@@ -33,7 +33,7 @@ class FrontendController extends Controller
         $posts=Post::where('status','active')->orderBy('id','DESC')->limit(3)->get();
         $banners=Banner::where('status','active')->limit(3)->orderBy('id','DESC')->get();
         // return $banner;
-        $products=Product::where('status','active')->orderBy('id','DESC')->limit(8)->get();
+        $products=Product::where('status','active')->orderBy('id','DESC')->limit(100)->get();
         $category=Category::where('status','active')->where('is_parent',1)->orderBy('title','ASC')->get();
         // return $category;
         return view('frontend.index')
@@ -93,13 +93,13 @@ class FrontendController extends Controller
             $products->whereBetween('price',$price);
         }
 
-        $recent_products=Product::where('status','active')->orderBy('id','DESC')->limit(3)->get();
+        $recent_products=Product::where('status','active')->orderBy('id','DESC')->limit(2)->get();
         // Sort by number
         if(!empty($_GET['show'])){
             $products=$products->where('status','active')->paginate($_GET['show']);
         }
         else{
-            $products=$products->where('status','active')->paginate(3);
+            $products=$products->where('status','active')->paginate(6);
         }
         // Sort by name , price, category
 
@@ -141,7 +141,7 @@ class FrontendController extends Controller
             $products->whereBetween('price',$price);
         }
 
-        $recent_products=Product::where('status','active')->orderBy('id','DESC')->limit(3)->get();
+        $recent_products=Product::where('status','active')->orderBy('id','DESC')->limit(2)->get();
         // Sort by number
         if(!empty($_GET['show'])){
             $products=$products->where('status','active')->paginate($_GET['show']);
@@ -280,7 +280,7 @@ class FrontendController extends Controller
             $post=$post->where('status','active')->orderBy('id','DESC')->paginate(9);
         }
         // $post=Post::where('status','active')->paginate(8);
-        $rcnt_post=Post::where('status','active')->orderBy('id','DESC')->limit(3)->get();
+        $rcnt_post=Post::where('status','active')->orderBy('id','DESC')->limit(6)->get();
         return view('frontend.pages.blog')->with('posts',$post)->with('recent_posts',$rcnt_post);
     }
 

@@ -1,6 +1,6 @@
 {
-    "name": "E-Mart ",
-    "short_name": "E-Mart",
+    "name": "E-Mart Online Store",
+    "short_name": "E-Mart Online Store",
     "description": "Responsive Web Application",
     "start_url": "/",
     "display": "standalone",

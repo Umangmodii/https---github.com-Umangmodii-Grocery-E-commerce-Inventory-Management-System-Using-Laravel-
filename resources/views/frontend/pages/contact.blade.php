@@ -108,9 +108,9 @@
 	<!-- Map Section -->
 	<div class="map-section">
 		<div id="myMap">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14130.857353934944!2d85.36529494999999!3d27.6952226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sne!2snp!4v1595323330171!5m2!1sne!2snp" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-		</div>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3649.089729208584!2d72.11303307484873!3d23.850947284909786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c8778070dbe63%3A0x6fc97302a71fccd1!2sUmang%20Modi%20-%20Web%20Developer!5e0!3m2!1sen!2sin!4v1700505127603!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 	</div>
+</div>
 	<!--/ End Map Section -->
 	
 	<!-- Start Shop Newsletter  -->
